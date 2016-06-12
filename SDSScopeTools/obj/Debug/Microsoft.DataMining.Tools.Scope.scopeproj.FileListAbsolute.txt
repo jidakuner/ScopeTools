@@ -1,0 +1,2 @@
+D:\ScopeTools\SDSScopeTools\bin\Debug\Algebra.xml
+D:\ScopeTools\SDSScopeTools\obj\Debug\Algebra.xml
