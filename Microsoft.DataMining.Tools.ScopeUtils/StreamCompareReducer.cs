@@ -17,7 +17,7 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
 <PrimaryKeys>
   <SafeList>
     <TanantTag>Tag</TanantTag>
-    <AssignedPlan>ServicePlanId,SubscribedPlanId</AssignedPlan>
+    <AssignedPlan>ServicePlanId,SubscribedPlanId,ServiceInstance</AssignedPlan>
     <PartnerTenant>SyndicationPartnerId</PartnerTenant>
     <Subscription>Id</Subscription>
     <Domain>Name</Domain>
@@ -45,7 +45,7 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
                 this.OutputSchema = GetOutputSchema(input);
             }
 
-            return new Schema(string.Join(",", this.OutputSchema.Select(x => string.Format("{0}:long", x))));
+            return new Schema(string.Format("{0},log:string",string.Join(",", this.OutputSchema.Select(x => string.Format("{0}:long", x)))));
         }
 
         public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
@@ -58,16 +58,20 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
             Row former = null;
             Row latter = null;
 
+            List<string> log = new List<string>();
+            string logPrimaryKeyValues =string.Empty;
             int count = 0;
             foreach(Row row in input.Rows)
             {
                 if (row["IsFormer"].Boolean)
                 {
                     former = row.Clone();
+                    logPrimaryKeyValues = GetPrimaryKeyValues(former);
                 }
                 else
                 {
                     latter = row.Clone();
+                    logPrimaryKeyValues = GetPrimaryKeyValues(latter);
                 }
 
                 count++;
@@ -92,10 +96,12 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
                 if (former == null)
                 {
                     outputRow["Root_PrimaryKey_Add"].Set(1L);
+                    log.Add(string.Format("{0}:{1}", "Root_PrimaryKey_Add", logPrimaryKeyValues));
                 }
                 else
                 {
                     outputRow["Root_PrimaryKey_Del"].Set(1L);
+                    log.Add(string.Format("{0}:{1}", "Root_PrimaryKey_Del", logPrimaryKeyValues));
                 }
             }
             else 
@@ -109,9 +115,17 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
 
                     List<string> schema = col.Split('_').ToList();
 
-                    outputRow[col].Set(CompareObject(former[schema[0]].Value, latter[schema[0]].Value, schema));
+                    long unMatchCount = CompareObject(former[schema[0]].Value, latter[schema[0]].Value, schema);
+                    outputRow[col].Set(unMatchCount);
+
+                    if (unMatchCount != 0)
+                    {
+                        log.Add(string.Format("{0}:{1}", col, logPrimaryKeyValues));
+                    }
                 }
             }
+
+            outputRow["log"].Set(string.Join(";", log));
 
             yield return outputRow;
         }
@@ -222,7 +236,12 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
 
             Type type = src.GetType();
 
-            if(this.PrimaryKeys.ContainsKey(type.Name))
+            if (src is Row)
+            {
+                Row row = (Row)src;
+                return string.Join(",", this.ReducerKeys.Select(x => row[x].Value.ToString()));
+            }
+            else if(this.PrimaryKeys.ContainsKey(type.Name))
             {
                 primaryKeysList.AddRange(this.PrimaryKeys[type.Name]);
             }
@@ -274,7 +293,7 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
             output.AddRange(GetPrimaryKeySchema("Root"));
             foreach(ColumnInfo item in input.Columns)
             {
-                if (this.PrimaryKeys.ContainsKey(item.Name))
+                if (this.PrimaryKeys.ContainsKey(item.Name) || this.ReducerKeys.Contains(item.Name))
                 {
                     continue;
                 }

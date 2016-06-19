@@ -25,24 +25,35 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
         public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
         {
             Dictionary<string, long> columns = new Dictionary<string, long>();
+            Dictionary<string, string> log = new Dictionary<string,string>();
 
             foreach (Row row in input.Rows)
             {
                 foreach (ColumnInfo item in row.Schema.Columns)
                 {
-                    if (item.Name.StartsWith("DateTime_") || item.Name.StartsWith("Dim_"))
+                    if(item.Name == "log")
                     {
-                        outputRow[item.Name].Set(row[item.Name].Value);
-
-                        continue;
+                        foreach(string i in (row[item.Name].String??string.Empty).Split(';'))
+                        {
+                            List<string> pair = i.Split(':').ToList();
+                            if (pair.Count() > 1)
+                            {
+                                if (!log.ContainsKey(pair[0]))
+                                {
+                                    log.Add(pair[0], pair[1]);
+                                }
+                            }
+                        }
                     }
-
-                    if (!columns.ContainsKey(item.Name))
+                    else
                     {
-                        columns.Add(item.Name, 0);
-                    }
+                        if (!columns.ContainsKey(item.Name))
+                        {
+                            columns.Add(item.Name, 0);
+                        }
 
-                    columns[item.Name] = columns[item.Name] + row[item.Name].LongQ ?? 0;
+                        columns[item.Name] = columns[item.Name] + row[item.Name].LongQ ?? 0;
+                    }
                 }
             }
 
@@ -50,6 +61,8 @@ namespace Microsoft.DataMining.Tools.ScopeUtils
             {
                 outputRow[name].Set(columns[name]);
             }
+
+            outputRow["log"].Set(string.Join(";", log.Select(x => string.Format("{0}:{1}", x.Key, x.Value))));
 
             yield return outputRow;
         }

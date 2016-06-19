@@ -1,5 +1,0 @@
-D:\ScopeTools\Microsoft.DataMining.Tools.ScopeUtils.UT\bin\Debug\Microsoft.DataMining.Tools.ScopeUtils.UT.dll
-D:\ScopeTools\Microsoft.DataMining.Tools.ScopeUtils.UT\bin\Debug\Microsoft.DataMining.Tools.ScopeUtils.UT.pdb
-D:\ScopeTools\Microsoft.DataMining.Tools.ScopeUtils.UT\obj\Debug\Microsoft.DataMining.Tools.ScopeUtils.UT.csprojResolveAssemblyReference.cache
-D:\ScopeTools\Microsoft.DataMining.Tools.ScopeUtils.UT\obj\Debug\Microsoft.DataMining.Tools.ScopeUtils.UT.dll
-D:\ScopeTools\Microsoft.DataMining.Tools.ScopeUtils.UT\obj\Debug\Microsoft.DataMining.Tools.ScopeUtils.UT.pdb

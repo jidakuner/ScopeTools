@@ -1,0 +1,43 @@
+﻿/// Microsoft.DataMining.CommonDataPlatform.module
+/// This is the interface to REFERENCE Microsoft.DataMining.CommonDataPlatform in SCOPE script.
+/// The module wraps all the dependencies needed by Microsoft.DataMining.CommonDataPlatform.dll 
+/// so that adding/changing a dependency will not be a breaking change to all consuming scripts.
+
+DEFINE MODULE Microsoft_DataMining_CommonDataPlatform 
+BEGIN
+
+REFERENCE @"Microsoft.DataMining.Flamingo.dll";
+RESOURCE @"Microsoft.DataMining.Flamingo.pdb";
+
+REFERENCE @"Microsoft.DataMining.Flamingo.Interface.dll";
+RESOURCE @"Microsoft.DataMining.Flamingo.Interface.pdb";
+
+REFERENCE @"ExpressionParser.dll";
+RESOURCE @"ExpressionParser.pdb";
+
+REFERENCE @"Microsoft.DataMining.Infrastructure.dll";
+RESOURCE @"Microsoft.DataMining.Infrastructure.pdb";
+
+REFERENCE @"ScopeUtil.dll";
+RESOURCE @"ScopeUtil.pdb";
+
+REFERENCE @"DebugStream.dll";
+RESOURCE @"DebugStream.pdb";
+
+REFERENCE @"Microsoft.Bond.Interfaces.dll";
+RESOURCE @"Microsoft.Bond.Interfaces.pdb";
+
+REFERENCE @"Microsoft.Bond.dll";
+REFERENCE @"Microsoft.Practices.Unity.dll";
+REFERENCE @"Microsoft.Practices.ServiceLocation.dll";
+
+REFERENCE @"Microsoft.Live.Json.dll";
+RESOURCE @"Microsoft.Live.Json.pdb";
+
+REFERENCE @"Microsoft.VisualStudio.TextTemplating.10.0.dll";
+REFERENCE @"Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll";
+
+USING Microsoft.DataMining.CommonDataPlatform;
+USING Microsoft.VisualStudio.TextTemplating;
+
+END MODULE

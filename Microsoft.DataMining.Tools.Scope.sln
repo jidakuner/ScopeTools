@@ -7,8 +7,6 @@ Project("{202899A3-C531-4771-9089-0213D66978AE}") = "Microsoft.DataMining.Tools.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DataMining.Tools.ScopeUtils", "Microsoft.DataMining.Tools.ScopeUtils\Microsoft.DataMining.Tools.ScopeUtils.csproj", "{4CEB6381-1E0D-4227-BD42-ED6218664232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DataMining.Tools.ScopeUtils.UT", "Microsoft.DataMining.Tools.ScopeUtils.UT\Microsoft.DataMining.Tools.ScopeUtils.UT.csproj", "{036AA6E3-5B99-4091-932F-6ED6D4BEE815}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,14 +37,6 @@ Global
 		{4CEB6381-1E0D-4227-BD42-ED6218664232}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4CEB6381-1E0D-4227-BD42-ED6218664232}.Release|x64.ActiveCfg = Release|Any CPU
 		{4CEB6381-1E0D-4227-BD42-ED6218664232}.Release|x86.ActiveCfg = Release|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Release|Any CPU.Build.0 = Release|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Release|x64.ActiveCfg = Release|Any CPU
-		{036AA6E3-5B99-4091-932F-6ED6D4BEE815}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

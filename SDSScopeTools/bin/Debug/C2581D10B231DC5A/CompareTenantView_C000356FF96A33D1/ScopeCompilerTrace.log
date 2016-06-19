@@ -1,0 +1,16 @@
+﻿2016-06-16T17:25:27.0199627+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-16T17:27:38.2401325+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	Compilation Diagnostics =>	{}
+2016-06-16T17:27:38.2561284+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	End Compilation
+2016-06-16T17:31:07.3348608+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-16T17:32:01.0878046+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-16T17:34:19.2364298+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	Compilation Diagnostics =>	{}
+2016-06-16T17:34:19.2554239+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	End Compilation
+2016-06-16T21:21:51.1998788+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-16T21:24:00.3553966+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	Compilation Diagnostics =>	{}
+2016-06-16T21:24:00.3783947+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	End Compilation
+2016-06-19T17:24:35.1953945+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-19T17:26:07.5478934+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	Compilation Diagnostics =>	{}
+2016-06-19T17:26:07.5698896+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	End Compilation
+2016-06-19T17:31:48.8139670+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos14.osdinfra.net/cosmos/office.adhoc, Version = 10.2.2.0
+2016-06-19T17:33:14.5531110+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	Compilation Diagnostics =>	{}
+2016-06-19T17:33:14.5711049+08:00		CompilerStatistics	LocalSubmissionCompilePipeline	DoCompile	End Compilation

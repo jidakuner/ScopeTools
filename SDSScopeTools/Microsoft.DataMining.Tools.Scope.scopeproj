@@ -27,10 +27,17 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Script Include="Scope.script" />
-    <ScriptCode Include="Scope.script.cs">
-      <DependentUpon>Scope.script</DependentUpon>
+    <Script Include="CompareTenantView.script" />
+    <ScriptCode Include="CompareTenantView.script.cs">
+      <DependentUpon>CompareTenantView.script</DependentUpon>
     </ScriptCode>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.DataMining.Tools.ScopeUtils\Microsoft.DataMining.Tools.ScopeUtils.csproj">
+      <Name>Microsoft.DataMining.Tools.ScopeUtils</Name>
+      <Project>{4ceb6381-1e0d-4227-bd42-ed6218664232}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(AppData)\Microsoft\ScopeStudio\MsBuild\1.0\Scope.targets" />
 </Project>

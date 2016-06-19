@@ -1,0 +1,86 @@
+﻿/// DataMining.Office.ViewLogic.module
+/// This is the interface to REFERENCE DataMining.Office.ViewLogic.dll in SCOPE script.
+/// The module wraps all the dependencies needed by DataMining.Office.ViewLogic.dll 
+/// so that adding/changing a dependency will not be a breaking change to all consuming scripts.
+
+DEFINE MODULE DataMining_Office_ViewLogic 
+BEGIN
+
+    MODULE @"Microsoft.DataMining.Flamingo.module";
+
+    REFERENCE @"Microsoft.DataMining.UnifiedApi.dll";
+    RESOURCE @"Microsoft.DataMining.UnifiedApi.pdb";
+
+    REFERENCE @"DataMining.Office.ViewLogic.dll";
+    RESOURCE @"DataMining.Office.ViewLogic.pdb";
+
+    REFERENCE @"DataMining.Office.DataLogic.Legacy.dll";
+    RESOURCE @"DataMining.Office.DataLogic.Legacy.pdb";
+
+    REFERENCE @"DataMining.Office.DataLogic.dll";
+    RESOURCE @"DataMining.Office.DataLogic.pdb";
+    
+    REFERENCE @"DataMining.Office.DataTypes.dll";
+    RESOURCE @"DataMining.Office.DataTypes.pdb";
+
+    REFERENCE @"DataMining.Office.DataModel.dll";
+    RESOURCE @"DataMining.Office.DataModel.pdb";
+
+    REFERENCE @"Microsoft.Live.Json.dll";
+    RESOURCE @"Microsoft.Live.Json.pdb";
+
+    REFERENCE @"Microsoft.BI.Common.dll";
+    RESOURCE @"Microsoft.BI.Common.pdb";
+
+    REFERENCE @"Microsoft.Bond.Interfaces.dll";
+    RESOURCE @"Microsoft.Bond.Interfaces.pdb";
+
+    REFERENCE @"Microsoft.DataMining.CommonDataPlatform.dll";
+    RESOURCE @"Microsoft.DataMining.CommonDataPlatform.pdb";
+
+    REFERENCE @"Microsoft.DataMining.CommonDataPlatform.Interface.dll";
+    RESOURCE @"Microsoft.DataMining.CommonDataPlatform.Interface.pdb";
+
+    REFERENCE @"ExpressionParser.dll";
+    RESOURCE @"ExpressionParser.pdb";
+
+    REFERENCE @"Microsoft.DataMining.Infrastructure.dll";
+    RESOURCE @"Microsoft.DataMining.Infrastructure.pdb";
+
+    REFERENCE @"ScopeUtil.dll";
+    RESOURCE @"ScopeUtil.pdb";
+
+    REFERENCE @"DebugStream.dll";
+    RESOURCE @"DebugStream.pdb";
+
+    REFERENCE @"Microsoft.DataMining.Bing.DataModel.dll";
+    RESOURCE @"Microsoft.DataMining.Bing.DataModel.pdb";
+
+    REFERENCE @"CommonPipelineConfiguration.dll";
+    RESOURCE @"CommonPipelineConfiguration.pdb";
+
+    REFERENCE @"Microsoft.DataMining.Common.Serialization.dll";
+    RESOURCE @"Microsoft.DataMining.Common.Serialization.pdb";
+
+    REFERENCE @"Microsoft.Bond.Interfaces.dll";
+    RESOURCE @"Microsoft.Bond.Interfaces.pdb";
+
+    REFERENCE @"DataMining.Office.DataAPI.Interfaces.dll";
+    RESOURCE @"DataMining.Office.DataAPI.Interfaces.pdb";
+
+    REFERENCE @"ASG.Telemetry.Schemas.dll";
+    RESOURCE @"ASG.Telemetry.Schemas.pdb";
+
+    REFERENCE @"DataMining.Aria.AriaOdin.DataLogic.dll";
+    RESOURCE @"DataMining.Aria.AriaOdin.DataLogic.pdb";
+    RESOURCE @"AriaOdinPartitionConfiguration.xml";
+
+    REFERENCE @"DataMining.Aria.AriaOdin.DataModel.dll";
+    RESOURCE @"DataMining.Aria.AriaOdin.DataModel.pdb";
+
+    REFERENCE @"Microsoft.Bond.dll";
+
+    USING MS.Internal.Bing.DataMining.UnifiedAPI;
+    USING Microsoft.DataMining.Office.DataLogic.Legacy;
+
+END MODULE
